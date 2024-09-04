@@ -75,7 +75,7 @@ a {
 .header_container {
   width: 100%;
   height: 465px;
-  background-image: url(../images/bg.png);
+  background-image: url(./images/bg.png);
   background-size: cover;
 }
 .header_content {
@@ -227,6 +227,81 @@ a {
   color: var(--color-dark-1);
   border-radius: 2px;
 }
+/* Form Container Styling */
+.form_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.plant_request_form {
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Form Label Styling */
+.plant_request_form label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: bold;
+}
+
+/* Form Input Styling */
+.plant_request_form input,
+.plant_request_form select,
+.plant_request_form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.plant_request_form input:focus,
+.plant_request_form select:focus,
+.plant_request_form textarea:focus {
+  border-color: #5a9;
+  outline: none;
+  box-shadow: 0 0 5px rgba(90, 153, 0, 0.5);
+}
+
+/* Button Styling */
+.form_button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #5a9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form_button:hover {
+  background-color: #487a4b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .plant_request_form {
+    padding: 1rem;
+  }
+
+  .form_button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 /* reviews */
 .review {

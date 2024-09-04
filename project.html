@@ -17,9 +17,7 @@
         <div class="nav_left">
           <a href="#" class="nav_logo">GREENMIND</a>
           <ul class="nav_list">
-            <li class="nav_item">
-              <a href="#" class="nav_link active">Home</a>
-            </li>
+            <li class="nav_item"><a href="#" class="nav_link active">Home</a></li>
             <li class="nav_item"><a href="#" class="nav_link">Products</a></li>
             <li class="nav_item"><a href="#" class="nav_link">Contact</a></li>
           </ul>
@@ -144,10 +142,47 @@
         </div>
         <div class="container categories_bottom">
           <p class="categories_p">
-            Horem ipsum dolor sit amet, consectetur adipiscing elit.
+            A plant based website which offers you a large variety of plants
           </p>
           <a href="#" class="categories_btn">See more &rarr;</a>
         </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container form_container">
+        <div class="section_header">
+          <h2 class="section_h2">Tell Us What You Need</h2>
+          <p class="section_p">Let us know your preferences, and we'll help you find the perfect plants.</p>
+        </div>
+        <form action="#" method="post" class="plant_request_form">
+          <div class="form_group">
+            <label for="name" class="form_label">Name:</label>
+            <input type="text" id="name" name="name" class="form_input" required />
+          </div>
+          <div class="form_group">
+            <label for="email" class="form_label">Email:</label>
+            <input type="email" id="email" name="email" class="form_input" required />
+          </div>
+          <div class="form_group">
+            <label for="plant-type" class="form_label">Plant Type:</label>
+            <select id="plant-type" name="plant-type" class="form_input">
+              <option value="natural">Natural Plant</option>
+              <option value="artificial">Artificial Plant</option>
+              <option value="accessories">Plant Accessories</option>
+            </select>
+          </div>
+          <div class="form_group">
+            <label for="quantity" class="form_label">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" class="form_input" min="1" required />
+          </div>
+          <div class="form_group">
+            <label for="message" class="form_label">Message:</label>
+            <textarea id="message" name="message" class="form_input" rows="4" placeholder="Any specific requirements?" required></textarea>
+          </div>
+          <div class="form_group">
+            <button type="submit" class="form_button">Submit Request</button>
+          </div>
+        </form>
       </div>
     </section>
     <section class="section">
@@ -251,7 +286,7 @@
         <div class="footer_item">
           <h2 class="nav_logo">GREENMIND</h2>
           <p class="footer_p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste
+            A plant based website which offers you a large variety of plants
             .
           </p>
         </div>
@@ -285,8 +320,9 @@
       </div>
     </footer>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+          <!--Swiper JS -->
+    
+     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
