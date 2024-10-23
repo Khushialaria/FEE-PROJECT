@@ -106,6 +106,8 @@
               delivery option.
             </p>
           </div>
+
+          
           <div class="about_item">
             <div class="about_img_box">
               <img src="./images/support.jpeg" alt="" class="about_item_img" />
@@ -185,14 +187,60 @@
         </form>
       </div>
     </section>
+
+    <input type="text" id="plantSearch" placeholder="Search plants..." />
+<ul id="plantList">
+  <li>Natural Plant</li>
+  <li>Artificial Plant</li>
+  <li>Succulent</li>
+  <li>Bonsai</li>
+</ul>
+
+<script>
+  const plantSearch = document.getElementById('plantSearch');
+  const plantList = document.getElementById('plantList');
+  const plants = plantList.getElementsByTagName('li');
+
+  plantSearch.addEventListener('input', function() {
+    const filter = plantSearch.value.toLowerCase();
+    for (let i = 0; i < plants.length; i++) {
+      let plant = plants[i];
+      if (plant.textContent.toLowerCase().includes(filter)) {
+        plant.style.display = '';
+      } else {
+        plant.style.display = 'none';
+      }
+    }
+  });
+</script>
+
+    <div>
+      <label for="productQuantity">Quantity:</label>
+      <input type="number" id="productQuantity" value="1" min="1">
+      <p>Price per plant: Rs 500</p>
+      <p>Total Price: <span id="totalPrice">Rs 500</span></p>
+    </div>
+    
+    <script>
+      const quantityInput = document.getElementById('productQuantity');
+      const totalPrice = document.getElementById('totalPrice');
+      const pricePerPlant = 500;
+    
+      quantityInput.addEventListener('input', () => {
+        const quantity = quantityInput.value;
+        totalPrice.textContent = `Rs ${pricePerPlant * quantity}`;
+      });
+    </script>
+
     <section class="section">
       <div class="container">
         <div class="section_header">
           <h2 class="section_h2">
-            What clients sya about <br />
+            What clients say about <br />
             GREENMIND?
           </h2>
         </div>
+        
         <div class="reviews">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
