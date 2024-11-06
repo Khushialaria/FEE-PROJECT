@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GREENMIND</title>
-
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="feeproject.css" />
   </head>
   <body>
@@ -30,7 +31,7 @@
     <div class="container header_container">
       <div class="header_content">
         <div class="wrapper">
-          <h1 class="header_main_title">Buy your dream plants</h1>
+          <h1 class="headet_main_title">Buy your dream plants</h1>
           <div class="header_items">
             <div class="header_item">
               <p class="header_item_number">50+</p>
@@ -91,7 +92,8 @@
             </div>
             <h4 class="about_item_title">Large Assortment</h4>
             <p class="about_item_text">
-              We offer many different types of products with fewer variations in each category.
+              we offer many different types of products with fewer variations in
+              each category.
             </p>
           </div>
           <div class="about_item">
@@ -100,16 +102,19 @@
             </div>
             <h4 class="about_item_title">Fast & Free Shipping</h4>
             <p class="about_item_text">
-              4-day or less delivery time, free shipping and an expedited delivery option.
+              4-day or less delivery time, free shipping and an expedited
+              delivery option.
             </p>
           </div>
+
+          
           <div class="about_item">
             <div class="about_img_box">
               <img src="./images/support.jpeg" alt="" class="about_item_img" />
             </div>
             <h4 class="about_item_title">24/7 Support</h4>
             <p class="about_item_text">
-              Answers to any business-related inquiry 24/7 and in real-time.
+              answers to any business related inquiry 24/7 and in real-time.
             </p>
           </div>
         </div>
@@ -139,7 +144,7 @@
         </div>
         <div class="container categories_bottom">
           <p class="categories_p">
-            A plant-based website which offers you a large variety of plants
+            A plant based website which offers you a large variety of plants
           </p>
           <a href="#" class="categories_btn">See more &rarr;</a>
         </div>
@@ -184,30 +189,201 @@
     </section>
 
     <input type="text" id="plantSearch" placeholder="Search plants..." />
-    <ul id="plantList">
-      <li>Natural Plant</li>
-      <li>Artificial Plant</li>
-      <li>Succulent</li>
-      <li>Bonsai</li>
-    </ul>
+<ul id="plantList">
+  <li>Natural Plant</li>
+  <li>Artificial Plant</li>
+  <li>Succulent</li>
+  <li>Bonsai</li>
+</ul>
 
+<script>
+  const plantSearch = document.getElementById('plantSearch');
+  const plantList = document.getElementById('plantList');
+  const plants = plantList.getElementsByTagName('li');
+
+  plantSearch.addEventListener('input', function() {
+    const filter = plantSearch.value.toLowerCase();
+    for (let i = 0; i < plants.length; i++) {
+      let plant = plants[i];
+      if (plant.textContent.toLowerCase().includes(filter)) {
+        plant.style.display = '';
+      } else {
+        plant.style.display = 'none';
+      }
+    }
+  });
+</script>
+
+    <div>
+      <label for="productQuantity">Quantity:</label>
+      <input type="number" id="productQuantity" value="1" min="1">
+      <p>Price per plant: Rs 500</p>
+      <p>Total Price: <span id="totalPrice">Rs 500</span></p>
+    </div>
+    
     <script>
-      const plantSearch = document.getElementById('plantSearch');
-      const plantList = document.getElementById('plantList');
-      const plants = plantList.getElementsByTagName('li');
-
-      plantSearch.addEventListener('input', function() {
-        const filter = plantSearch.value.toLowerCase();
-        for (let i = 0; i < plants.length; i++) {
-          let plant = plants[i];
-          if (plant.textContent.toLowerCase().includes(filter)) {
-            plant.style.display = '';
-          } else {
-            plant.style.display = 'none';
-          }
-        }
+      const quantityInput = document.getElementById('productQuantity');
+      const totalPrice = document.getElementById('totalPrice');
+      const pricePerPlant = 500;
+    
+      quantityInput.addEventListener('input', () => {
+        const quantity = quantityInput.value;
+        totalPrice.textContent = `Rs ${pricePerPlant * quantity}`;
       });
     </script>
 
+    <section class="section">
+      <div class="container">
+        <div class="section_header">
+          <h2 class="section_h2">
+            What clients say about <br />
+            GREENMIND?
+          </h2>
+        </div>
+        
+        <div class="reviews">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="review">
+                  <p class="review_text">
+                    I recently discovered this plant website, and it has quickly become my go-to source for all things green! The variety of plants available is impressive, catering to both beginners and seasoned plant enthusiasts. The website is user-friendly, making it easy to browse through different categories, whether you’re looking for indoor plants, succulents, or something more exotic.
+                  </p>
+                  <div class="review_footer">
+                    <div class="review_user">
+                      <h3 class="review_user_name">khushi</h3>
+                      <p class="review_user_designation">software engineer</p>
+                    </div>
+                    <h3 class="review_rating">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6">
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd" />
+                      </svg>
+                      <span>4.5</span>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review">
+                  <p class="review_text">
+                    What truly sets this site apart is the detailed care instructions provided for each plant. As someone who loves plants but doesn't always have the time to research their needs, I really appreciate the step-by-step guides and tips on how to keep my plants thriving. The descriptions are clear, and I’ve had great success following them.
+                  </p>
+                  <div class="review_footer">
+                    <div class="review_user">
+                      <h3 class="review_user_name">maanit</h3>
+                      <p class="review_user_designation">army officer</p>
+                    </div>
+                    <h3 class="review_rating">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6">
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd" />
+                      </svg>
+                      <span>4.5</span>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review">
+                  <p class="review_text">
+                    Overall, I couldn’t be happier with my experience. This website is a treasure trove for plant lovers, offering quality plants, excellent service, and a delightful shopping experience. I’ll definitely be back for more!
+                  </p>
+                  <div class="review_footer">
+                    <div class="review_user">
+                      <h3 class="review_user_name">manik</h3>
+                      <p class="review_user_designation">software developer</p>
+                    </div>
+                    <h3 class="review_rating">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6">
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd" />
+                      </svg>
+                      <span>4.5</span>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container footer_container">
+        <div class="footer_item">
+          <h2 class="nav_logo">GREENMIND</h2>
+          <p class="footer_p">
+            A plant based website which offers you a large variety of plants
+            .
+          </p>
+        </div>
+        <div class="footer_item">
+          <div class="footer_item_title">Information</div>
+          <ul class="footer_list">
+            <li class="footer_list_item">About</li>
+            <li class="footer_list_item">Product</li>
+            <li class="footer_list_item">Blog</li>
+          </ul>
+        </div>
+        <div class="footer_item">
+          <div class="footer_item_title">Company</div>
+          <ul class="footer_list">
+            <li class="footer_list_item">Communtiy</li>
+            <li class="footer_list_item">Careers</li>
+            <li class="footer_list_item">Our Story</li>
+          </ul>
+        </div>
+        <div class="footer_item">
+          <div class="footer_item_title">Contact</div>
+          <ul class="footer_list">
+            <li class="footer_list_item">Getting Starded</li>
+            <li class="footer_list_item">Pricing</li>
+            <li class="footer_list_item">Resources</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer_copy">
+        <p>2023 all Right Reserved Term of use GREENMIND</p>
+      </div>
+    </footer>
+
+          <!--Swiper JS -->
+    
+     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>
